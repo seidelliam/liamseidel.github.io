@@ -182,10 +182,25 @@ container{
     list-style: none;
     color: black;
 }
+.project-1 a{
+    text-decoration: none;
+}
 .project-2{
     background: orange;
+    text-align: center;
+    background-size: contain;
     cursor: pointer;
-
+}
+.project-2 li{
+    list-style: none;
+    text-transform: uppercase;
+    color: black;
+}
+.project-2 a{
+    text-decoration: none;
+}
+.project-2 li:hover{
+    color:white;
 }
 .project-3{
     background: yellow;
