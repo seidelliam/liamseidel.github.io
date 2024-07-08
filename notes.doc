@@ -1,0 +1,15 @@
+Just wanted to make some notes for next time:
+    - Go through and fix issues with margins FIRST
+    - Plan out what info can go on the website and where
+        - If there isn't a lot, thing about what design types work best for that
+        - If there is, same thing
+    - Look at other websites for some inspiration
+    -Think about a cool opening transition to open the page, especially if you make the page scrollable
+- For a intro transition, think about a knockoff Netflix (vertical line, split and open page)
+
+
+To-Do:
+1. Figure out why the navbar is dissappearing at the bottom of the page
+2. Add in real project to figure out grid layout and display method
+3. Do research on ::after
+4. (optional) Set navbar animation to happen when scroll down to next page
