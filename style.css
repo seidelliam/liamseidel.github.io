@@ -1,231 +1,283 @@
 *{
-margin: 0;
-padding: 0;
-box-sizing:initial;
-font-family:'Merriweather' , sans-serif;
-overflow-x: hidden;
-scroll-behavior: smooth;
-}
-@keyframes down-to-up{
-    0%{
-        transform: translateY(100%);
+    margin: 0;
+    padding: 0;
+    box-sizing:initial;
+    font-family:'Merriweather' , sans-serif;
+    overflow-x: hidden;
+    scroll-behavior:smooth;
     }
-    100%{
-        transform: translateY(0%);
+    @keyframes down-to-up{
+        0%{
+            transform: translateY(100%);
+        }
+        100%{
+            transform: translateY(0%);
+        }
     }
-}
-@keyframes navbarLoad {
-    0%{
-        transform:translateY(300%);
-        opacity: 0;
+    @keyframes headerload{
+        0%{
+            transform: translateY(350%);
+        }
+        90%{
+            transform: translateY(-2%);
+        }
+        100%{
+            transform: translateY(0%);
+        }
     }
-    90%{
-        transform: translateY(-5%);
-        opacity: 0.5;
+    @keyframes skyload{
+        0%{
+            transform: translateY(1000%);
+        }
+        90%{
+            transform: translateY(-2%);
+        }
+        100%{
+            transform: translateY(0%);
+        }
     }
-    100%{
-        transform:translateY(0%);
-        opacity: 1; 
+    @keyframes navbarLoad {
+        0%{
+            transform:translateY(300%);
+            opacity: 0;
+        }
+        90%{
+            transform: translateY(-5%);
+            opacity: 0.5;
+        }
+        100%{
+            transform:translateY(0%);
+            opacity: 1; 
+        }
     }
-}
-@keyFrames adjustOpacity{
-    0%{
-        opacity: 0;
+    @keyFrames adjustOpacity{
+        0%{
+            opacity: 0;
+        }
+        50%{
+            opacity: 0;
+        }
+        100%{
+            opacity: 1;
+        }
     }
-    50%{
-        opacity: 0;
-    }
-    100%{
-        opacity: 1;
-    }
-}
-@keyframes headerLoad{
-    0%{
-        opacity: 0;
-    }
-    50%{
-        opacity: 0;
-    }
-    100%{
-        opacity: 1;
-    } 
-}
-@keyframes textLoad{
-    0%{
-        opacity: 0;
-    }
-
-    100%{
-        opacity: 1;
-    } 
-}
-header{
-    height: 100vh; /**/
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    background-image: linear-gradient(to bottom, rgb(255, 0, 0), rgb(38, 20, 201));
-}
-container{
-    display:flexblock;
-}
-
-.navbar{
-    height: 100%;
-    width: 11vw;
-    background-color: lightgrey;
-    position: absolute;
-    overflow-y: hidden;
-    opacity: 0.5;
-    margin: 0!important; 
-}
-
-.logo{
-    cursor: pointer;
-}
-
-.navbar ul li{
-    cursor: pointer;
-    font-size: larger;
-    list-style: none;
-    display: blocks;
-    margin: 80% 15px;
-    animation: 4s ease-out 0s 1 down-to-up;
-}
-.navbar ul li a{
-    text-decoration: none;
-    color: rgb(163, 131, 99);
-    text-transform: uppercase;
-}
-.navbar ul li a::after{
-    content: '';
-    height: 3px;
-    width: 0;
-    background: rgba(163, 131, 99, 0.5);
-    position: absolute;
-    display: flex;
-    left: 0;
-    top: 20px;
-    bottom: -5;
-    transition: 0.3s;
-
-}
-.navbar ul li a:hover::after{
-    width:79%;
-}
-
-.about{
-    width: 85vw;
-    display:flex;
-    margin-left: auto;
+    @keyframes textLoad{
+        0%{
+            opacity: 0;
+        }
     
-}
-.about-title{
-    background-color: rgba(209, 75, 75, 0.562);
-    display: flex;
-    width: 50%;
-    height: 100vh;
-    font-size: 30px;
-    justify-content: center;
-    align-items:center;
-}
+        100%{
+            opacity: 1;
+        } 
+    }
+    header{
+        height: 100vh; /**/
+        display:inline;
+        justify-content: center;
+        align-items: center;
+        overflow-y: hidden;
+    }
+ 
+    .water{
+        position:relative;
+        margin-top: -6vh;
+        width: 100vw;
+        animation: 1s ease-out 0s 1 headerload;
+    }
+    .foreground{
+        position: relative;
+        width: 100vw;
+        margin-top: -60vh;
+        animation: 1.5s ease-out 0s 1 headerload; 
+    }
+    .background{
+        position: relative;
+        margin-top: -20vh;
+        margin-left: 1.7vw;
+        width: 98.3vw;
+        animation: 2.2s ease-out 0s 1 headerload; 
+        
+    }
+    .sky{
+        position: relative;
+        animation: 2.5s ease-out 0s 1 skyload; 
+        width: 100vw;
+        
+    }
+    container{
+        display:flexblock;
+    }
+    .data-scrollmagic-pin-spacer{
+        width: 11vw!important;
+        height: 100%!important;
+    }
+    .navbar{
+        height:100%;
+        width: 11vw;
+        background-color: lightgrey;
+        position: absolute;
+        overflow-y: hidden;
+        opacity: 0.5;
+        margin: 0!important;
 
-.about-content{
-    width: 50%;
-    margin-left: 20px;
-    font-size: large;
-}
-.projects{
-    width: 85vw;
-    display: flex;
-    margin-left: auto;
-}
+    }
+    
+    .logo{
+        cursor: pointer;
+    }
+    
+    .navbar ul li{
+        cursor: pointer;
+        font-size: larger;
+        list-style: none;
+        display: inline-block;
+        margin: 40% 15px;
+        
+    }
+    .navbar ul li a{
+        text-decoration: none;
+        color: rgb(163, 131, 99);
+        text-transform: uppercase;
+    }
+    .navbar ul li a::after{
+        content: '';
+        height: 3px;
+        width: 0;
+        background: rgba(163, 131, 99, 0.5);
+        position: absolute;
+        display: flex;
+        left: 0;
+        top: 20px;
+        bottom: -5;
+        transition: 0.3s;
+    
+    }
+    .navbar ul li a:hover::after{
+        width:79%;
+    }
+    
+    .about{
+        width: 85vw;
+        display:flex;
+        margin-left: auto;
 
-.projects-title{
-    background-color: rgb(153, 143, 188);
-    display: flex;
-    width: 50%;
-    height: 100vh;/**/
-    font-size: 30px;
-    justify-content: center;
-    align-items:center;
+    }
+    .about-title{
+        background-color: rgba(209, 75, 75, 0.562);
+        display: flex;
+        width: 50%;
+        height: 90vh;
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+        font-size: 30px;
+        justify-content: center;
+        align-items:center;
+    }
+    
+    .about-content{
+        width: 50%;
+        height: 90vh;
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+        margin-left: 20px;
+        font-size: large;
+    }
+    .projects{
+        width: 85vw;
+        display: flex;
+        margin-left: auto;
+    }
+    
+    .projects-title{
+        background-color: rgba(153, 143, 188, 0.5);
+        display: flex;
+        width: 50%;
+        height: 90vh;
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+        font-size: 30px;
+        justify-content: center;
+        align-items:center;
+    
+    }
 
-}
-
-.project-grid{
-    display: grid;
-    width: 50%;
-    margin-left: 20px;
-    font-size: large;
-    grid-template-rows: repeat(3, 300px);
-    grid-template-columns: repeat(2, 300px);
-    grid-gap: 1em 3em;
-
-}
-
-.project-1{
-    text-align: center;
-    background-image: url("files/lenna-background-image.png");
-    background-size: contain;
-    cursor: pointer;
-}
-.project-1 li{
-    list-style: none;
-    text-transform: uppercase;
-    color: white;
-}
-.project-1:hover{
-    background-image: url("files/lenna-background-image-toggle.png");
-    background-size: contain;
-}
-.project-1:hover li{
-    list-style: none;
-    color: black;
-}
-.project-1 a{
-    text-decoration: none;
-}
-.project-2{
-    background: orange;
-    text-align: center;
-    background-size: contain;
-    cursor: pointer;
-}
-.project-2 li{
-    list-style: none;
-    text-transform: uppercase;
-    color: black;
-}
-.project-2 a{
-    text-decoration: none;
-}
-.project-2 li:hover{
-    color:white;
-}
-.project-3{
-    background: yellow;
-    cursor: pointer;
-
-}
-.project-4{
-    background: green;
-    cursor: pointer;
-}
-.project-5{
-    background: blue;
-    cursor: pointer;
-
-}
-.project-6{
-    background: indigo;
-    cursor: pointer;
-
-}
-footer{
-    height: 100vh;/**/
-    display: flex;
-    justify-content: center;
-}
-.linkedin{
-    size: 10%;
-}
+    .project-grid{
+        display: grid;
+        width: 50%;
+        margin-left: 20px;
+        height: auto;
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+        font-size: large;
+        grid-template-rows: repeat(3, 300px);
+        grid-template-columns: repeat(2, 300px);
+        grid-gap: 1em 3em;
+    
+    }
+    
+    .project-1{
+        text-align: center;
+        background-image: url("files/lenna-background-image.png");
+        background-size: contain;
+        cursor: pointer;
+    }
+    .project-1 li{
+        list-style: none;
+        text-transform: uppercase;
+        color: white;
+    }
+    .project-1:hover{
+        background-image: url("files/lenna-background-image-toggle.png");
+        background-size: contain;
+    }
+    .project-1:hover li{
+        list-style: none;
+        color: black;
+    }
+    .project-1 a{
+        text-decoration: none;
+    }
+    .project-2{
+        background: orange;
+        text-align: center;
+        background-size: contain;
+        cursor: pointer;
+    }
+    .project-2 li{
+        list-style: none;
+        text-transform: uppercase;
+        color: black;
+    }
+    .project-2 a{
+        text-decoration: none;
+    }
+    .project-2 li:hover{
+        color:white;
+    }
+    .project-3{
+        background: yellow;
+        cursor: pointer;
+    
+    }
+    .project-4{
+        background: green;
+        cursor: pointer;
+    }
+    .project-5{
+        background: blue;
+        cursor: pointer;
+    
+    }
+    .project-6{
+        background: indigo;
+        cursor: pointer;
+    
+    }
+    footer{
+        height: 100vh;/**/
+        display: flex;
+        justify-content: center;
+    }
+    .linkedin{
+        size: 10%;
+    }
