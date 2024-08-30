@@ -2,9 +2,30 @@
     margin: 0;
     padding: 0;
     box-sizing:border-box;
-    font-family:'Merriweather' , sans-serif;
-    scroll-behavior:smooth;
+    font-family: "Poppins" , sans-serif;
+    scroll-behavior: smooth;
     background-color:rgba(163, 131, 99. 0.5);
+    }
+    p{
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-size: normal;
+    }
+    h1{
+        font-family: "Lora", serif;
+        font-weight: 700;
+        font-size: normal;
+        color: rgb(101, 88, 77);
+    }
+    h2{
+        font-family: "Lora", serif;
+        font-weight: 500;
+        font-size: normal;
+    }
+    a{
+        font-family: "Lora", serif;
+        font-weight: 500;
+        font-size: normal;
     }
     @keyframes headerload{
         0%{
@@ -127,19 +148,23 @@
     .Liam h1{
         font-size: 100px;
         text-transform: uppercase;
-        color: lightslategray
+        color: rgb(54, 69, 79);
+    }
+    .landing-wrapper{
+        position:relative;
     }
     .foreground{
         position: sticky;
         width: 100%;
         margin-top: -30%;
+        margin-bottom: -1%;
         animation: 1.5s ease-out 0s 1 headerload; 
         filter: opacity(1);
         background: none;
         z-index: 1;
     }
     .background{
-        position: relative;
+        position: sticky;
         margin-top: -10%;
         margin-left: 1.7vw;
         width: 98.3%;
@@ -172,7 +197,8 @@
     .navbar{
         height:100%;
         width: 11vw;
-        background-color: lightgrey;
+        background-color: rgba(211, 211, 211, 0.8);
+        backdrop-filter: blur(10px);
         position: absolute;
         overflow-y: hidden;
         opacity: 0.1;
@@ -196,7 +222,7 @@
         
     }
     .navbar ul li a{
-        text-decoration: none;
+        text-decoration:none;
         color: rgb(163, 131, 99);
         text-transform: uppercase;
     }
@@ -219,9 +245,6 @@
         display:flex;
         margin-left: auto;
         margin-right: 5%;
-        animation: fly-in linear both;
-        animation-timeline: view();
-        animation-range: entry 50% cover 50%;
     }
     .about-title{
         background-color: rgba(211, 211, 211, 0.5);
@@ -245,8 +268,8 @@
         width: 400px;
         margin-left: auto;
         margin-right: auto;
-        margin-top: 20%;
-        margin-bottom: 10%;
+        margin-top: 5%;
+        margin-bottom: 5%;
         object-fit: cover;
     }
     .about-content{
@@ -255,25 +278,37 @@
         height: 90vh;
         margin-top: 5vh;
         margin-bottom: 5vh;
-        margin-left: 20px;
+        text-align: center;
+        margin-left: 2%;
+        padding-right: 5%;
+        padding-left: 5%;
         font-size: large;
-        backdrop-filter: blur(10px);
+        justify-content: center;
+        animation: fly-in linear both;
+        animation-timeline: view();
+        animation-range: entry 30% cover 40%;
     }
     .about-content p{
         padding-left: 5%;
         padding-right: 5%;
         animation: textLoad linear both;
         animation-timeline: view();
-        animation-range: entry 0% cover 30%;
+        animation-delay: 5s;
+        animation-range: entry-crossing 40% cover 50% ;
+    }
+    .about-content h2{
+        padding-left: 5%;
+        padding-right: 5%;
+        animation: textLoad linear both;
+        animation-timeline: view();
+        animation-delay: 0s;
+        animation-range: entry 0% cover 40%;
     }
     .projects{
         width: 80%;
         display: flex;
         margin-left: auto;
         margin-right: 5%;
-        animation: fly-in linear both;
-        animation-timeline: view();
-        animation-range: entry 50% cover 50%;
     }
     
     .projects-title{
@@ -293,6 +328,7 @@
         width: 50%;
         display: flex;
         justify-content: center;
+        
     }
     .project-grid{
         display: grid;
@@ -302,6 +338,9 @@
         grid-template-rows: repeat(3, 15vw);
         grid-template-columns: repeat(2, 15vw);
         grid-gap: 1em 3em;
+        animation: fly-in linear both;
+        animation-timeline: view();
+        animation-range: entry 0% cover 40%;
     }
     
     .project-1{
@@ -364,46 +403,56 @@
     }
     .contact-form{
         height: auto;
-        width: 50vw;
+        width: auto;
         padding: auto;
+        padding-top: 5%;
+        padding-bottom: 5%;
         align-items: center;
-        justify-content: space-around;
+        justify-content: center;
+        flex-direction: column;
+        display: flex;
     }
     .contact-container{
-        height: 50vh;
+        height: auto;
         width: 50%;
         margin: auto;
-        display: flex;
         align-items: center;
         justify-content: space-evenly;
-        flex-direction: column;
         backdrop-filter: blur(20px);
         border-radius: 40px;
     }
-    .contact-container h2{
+    .contact-container h1{
         width: 90%;
         height: 30%;
-        display: flex;
         align-items: center;
-        justify-content: center;
+        text-align: center;
+        justify-content: space-evenly;
         background-color: rgba(211, 211, 211, 0.5);
         font-size: 40px;
         backdrop-filter: blur(10px);
-        text-decoration: underline;
         border-radius: 40px;
     }
+    .input-wrapper{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
     .contact-inputs{
-        width: 35vh;
+        width: 40%;
         height: 5vh;
+        margin-top: 5%;
         border-radius: 15px;
         background-color: rgba(211, 211, 211, 0.5);
         backdrop-filter: blur(10px);
     }
     .messages{
-        height: 40%;
+        height: 40vh;
         width: 90%;
         border-radius: 20px;
         padding-left: 1%;
+        margin-top: 5%;
+        margin-bottom: 5%;
         background-color: rgba(211, 211, 211, 0.5);
         backdrop-filter: blur(10px);
     }

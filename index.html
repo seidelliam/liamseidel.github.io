@@ -7,17 +7,23 @@
         <meta name = "viewport" content = "width = device-width, initial-scale=1.0">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href = "style.css">
         <title>Document</title>
     </head>
 
     <body>
-       
-            <div class = "Liam" id = "header"><div><h1>Liam Seidel</h1></div></div>
+        <div class = "landing-wrapper">
+
+            <div class = "Liam" id = "hea>der"><div><h1>Liam Seidel</h1></div></div>
             <img class = "sky" src = "files/Kauai-sky-final.png"></img>
             <img class = "background" src = "files/Kauai-background-final.png"></img> 
             <img class = "foreground" id = "foreground" src = "files/Kauai-foreground-final.png"></img>
+
+        </div>
             <!--<img class = "water" src = "files/Kauai-water-final.png"></img> -->
        
         <div class = "main-wrapper">
@@ -40,11 +46,13 @@
 
                 <div class = "about-content">
                     <img class = "headshot" src = "files/headshot.JPG">
-                    <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut velit vel ad similique harum ducimus iusto, earum ea ex facilis dignissimos.
-                        Repellat quisquam soluta iste itaque accusantium 
-                        reiciendis quae! Laudantium suscipit autem veniam voluptatibus eos mollitia consequuntur 
-                        expedita ducimus laborum sit commodi magni fugiat nemo magnam quibusdam, excepturi numquam quo?</p>
-            </div>
+                    <p style = "font-size: 20px; color: rgb(54, 69, 79); font-weight: 400; background-color: rgba(211, 211, 211, 0.5); border-radius: 10px; padding-bottom: 5%; padding-top: 5%;" > Hi! My name is <b style = "font-size: 23px; color: rgb(60, 112, 52); font-family: 'Lora', serif;" >Liam Seidel</b>
+                        I am a junior at San Diego State University, majoring in Computer Science with a strong
+                        focus on backend development—a passion I've pursued for over six years. I am actively seeking internships and research 
+                        opportunities where I can apply and expand my expertise. My commitment to continually challenging myself and embracing new 
+                        skills makes me a dedicated and adaptable team member. Feel free to explore my current projects and reach out with any 
+                        questions or opportunities.</p>
+                </div>
             
             </section>
             <section class = "projects" id = "projects">
@@ -65,7 +73,7 @@
             <div class = "contact-container">
             <form action="https://api.web3forms.com/submit" method="POST" class = "contact-form">
             
-            <h2>CONTACT ME</h2>
+            <h1>CONTACT ME</h1>
                 <div class = "input-wrapper">
             <input type="hidden" name="access_key" value="e5558dcf-26f9-4f96-a25d-0dfa8bd99934">
             <input id = "name" name = "name" placeholder="Your Name" class = "contact-inputs" required>

@@ -12,7 +12,7 @@ function splitScroll(){
     const controller = new ScrollMagic.Controller();
 
     new ScrollMagic.Scene({
-        duration: '245%',
+        duration: '257.3%',
         triggerElement: '.navbar',
         triggerHook: 0
     })
