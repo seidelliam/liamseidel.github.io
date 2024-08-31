@@ -42,7 +42,7 @@
         0%{
             transform: translateY(350%);
         }
-        
+
         90%{
             transform: translateY(-2%);
         }
@@ -237,6 +237,7 @@
     .navbar ul li a{
         text-decoration:none;
         text-transform: uppercase;
+        color: rgb(101, 88, 77);
     }
     .navbar ul li a::after{
         content: '';
