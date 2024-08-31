@@ -16,7 +16,6 @@ function splitScroll(){
         triggerElement: '.navbar',
         triggerHook: 0
     })
-    .addIndicators()
     .setPin('.navbar')
     .addTo(controller);
 }
@@ -34,7 +33,6 @@ function projectScroll(x){
         triggerElement: '.projects-title',
         triggerHook: 0.05
     })
-    .addIndicators()
     .setPin('.projects-title')
     .addTo(controller);
     }
