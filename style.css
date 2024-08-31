@@ -38,6 +38,18 @@
             transform: translateY(0%);
         }
     }
+    @keyframes foregroundload{
+        0%{
+            transform: translateY(350%);
+        }
+        
+        90%{
+            transform: translateY(-2%);
+        }
+        100%{
+            transform: translateY(0%);
+        }
+    }
     @keyframes animatedBackground {
         from {
             background-size: contain;
@@ -139,6 +151,7 @@
         animation-name: headerRise;
         animation-duration: 4s;
         animation-iteration-count: 1;
+        z-index: -1;
     }
     .Liam div{
         animation-name:headerrumble;
@@ -158,7 +171,7 @@
         width: 100%;
         margin-top: -30%;
         margin-bottom: -1%;
-        animation: 1.5s ease-out 0s 1 headerload; 
+        animation: 1.5s ease-out 0s 1 foregroundload; 
         filter: opacity(1);
         background: none;
         z-index: 1;
@@ -168,10 +181,10 @@
         margin-top: -10%;
         margin-left: 1.7vw;
         width: 98.3%;
-        animation: 2.2s ease-out 0s 1 headerload;
+        animation: 2.5s ease-out 0s 1 headerload;
         filter: opacity(1);
         background: none; 
-        z-index: 0;
+        z-index: -1;
         
     }
     .sky{
@@ -181,7 +194,7 @@
         width: 100%;
         filter: opacity(1);
         background: none;
-        z-index: -1;
+        z-index: -2;
     }
     .main-wrapper{
         width: 100%;
@@ -223,7 +236,6 @@
     }
     .navbar ul li a{
         text-decoration:none;
-        color: rgb(101, 88, 77);
         text-transform: uppercase;
     }
     .navbar ul li a::after{
@@ -264,8 +276,8 @@
         justify-content: center;
         align-items: center;
         border-radius: 50%;
-        height: 400px;
-        width: 400px;
+        height: 30vh;
+        width: 30vh;
         margin-left: auto;
         margin-right: auto;
         margin-top: 5%;
