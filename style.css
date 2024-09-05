@@ -211,9 +211,10 @@
     .navbar{
         height:100%;
         width: 11vw;
+        position:absolute;
+        display: flex;
         background-color: rgba(211, 211, 211, 0.8);
         backdrop-filter: blur(10px);
-        overflow-y: hidden;
         margin: 0!important;
         z-index: 10;
         animation: navbarLoad linear both;
