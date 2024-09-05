@@ -144,7 +144,7 @@
         --scroll: 0;
     }  
     .Liam{
-        position: absolute;
+        position:fixed;
         display: flex; 
         width: 100%;
         top: 8%;
@@ -152,7 +152,7 @@
         animation-name: headerRise;
         animation-duration: 4s;
         animation-iteration-count: 1;
-        z-index: -1;
+        z-index: 1;
     }
     .Liam div{
         animation-name:headerrumble;
@@ -165,37 +165,36 @@
         color: rgb(54, 69, 79);
     }
     .landing-wrapper{
-        position:relative;
+        overflow-y: hidden;
     }
     .foreground{
-        position: sticky;
+        position: relative;
         width: 100%;
         margin-top: -30%;
         margin-bottom: -1%;
         animation: 1.5s ease-out 0s 1 foregroundload; 
-        filter: opacity(1);
         background: none;
-        z-index: 1;
+        z-index: 20;
+        overflow-y:hidden;
     }
     .background{
-        position: sticky;
+        position:sticky;
         margin-top: -10%;
         margin-left: 1.7vw;
         width: 98.3%;
         animation: 2.5s ease-out 0s 1 headerload;
         filter: opacity(1);
         background: none; 
-        z-index: -1;
+        z-index: 2;
         
     }
     .sky{
-        position: sticky;
         top: 0;
         animation: 2.5s ease-out 0s 1 skyload; 
         width: 100%;
         filter: opacity(1);
         background: none;
-        z-index: -2;
+        z-index: -1;
     }
     .main-wrapper{
         width: 100%;
@@ -203,10 +202,14 @@
         background-image: url("files/website-background-image.png");
         background-repeat: no-repeat;
         animation: 1s ease-out 0s 1 animatedBackground;
-        margin-top: -5%;
+        margin-top: -8%;
         padding-top: 20%;
-        background-size: cover;
-        background-position: center;
+        background-size:cover;
+        
+        z-index: 10;
+    }
+    .scrollmagic-pin-spacer{
+        display: flex;
     }
     .navbar{
         height:100%;
@@ -286,6 +289,7 @@
         object-fit: cover;
     }
     .about-content{
+        
         width: 50%;
         border-radius: 5%;
         height: 90vh;
@@ -301,6 +305,7 @@
         animation-range: entry 30% cover 40%;
     }
     .about-content p{
+        display: block;
         padding-left: 5%;
         padding-right: 5%;
         animation: textLoad linear both;
@@ -434,6 +439,7 @@
         justify-content: center;
         flex-direction: column;
         display: flex;
+        
     }
     .contact-container{
         height: auto;
@@ -499,13 +505,15 @@
     .linkedin{
         size: 10%;
     }
-
+    @media(min-width: 1200px){
+        
+    }
     /*-----------------------------------------*/
     /*-----------------------------------------*/
     /*-----------------------------------------*/
+    
 
-
-    @media (max-width: 600px){
+    @media (max-width: 768px){
         header{
             height: 100%; /**/
             justify-content: center;
@@ -567,6 +575,7 @@
         }
         .main-wrapper{
             width: 100%;
+            display: block;
             background-color: rgb(255, 255, 255);
             background-image: url("files/website-background-image.png");
             background-repeat: no-repeat;
@@ -577,6 +586,9 @@
             background-position: center;
             z-index: -1;
         }
+        .scrollmagic-pin-spacer{
+            display: flex;
+        }
         .navbar{
             height:100%;
             width: 20vw;
@@ -585,6 +597,9 @@
             overflow-y: hidden;
             opacity: 0.8;
             margin: 0!important;
+            animation: navbarLoad linear both;
+            animation-timeline: view();
+            animation-range: entry 30% cover 50%;
         }
         .navbar ul li{
             cursor: pointer;
@@ -620,8 +635,8 @@
             justify-content: center;
             align-items: center;
             border-radius: 50%;
-            height: 40vh;
-            width: 40vh;
+            height: 30vh;
+            width: 30vh;
             margin-bottom: 20%;
             margin-right: auto;
             margin-left: auto;
@@ -684,7 +699,36 @@
             grid-gap: 1em 3em;
         
         }
-        
+        .contact-container{
+            height: auto;
+            width: 50%;
+            margin-left: 35%;
+            align-items: center;
+            justify-content: space-evenly;
+            backdrop-filter: blur(20px);
+            border-radius: 40px;
+        }
+        .contact-container h1{
+            width: 90%;
+            height: 30%;
+            align-items: center;
+            text-align: center;
+            justify-content: space-evenly;
+            background-color: rgba(211, 211, 211, 0.5);
+            font-size: 30px;
+            backdrop-filter: blur(10px);
+            border-radius: 40px;
+        }
+        .messages{
+            height: 20vh;
+            width: 100%;
+            border-radius: 20px;
+            padding-left: 1%;
+            margin-top: 5%;
+            margin-bottom: 5%;
+            background-color: rgba(211, 211, 211, 0.5);
+            backdrop-filter: blur(10px);
+        }
 
     }
 
