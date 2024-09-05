@@ -4,6 +4,7 @@
     box-sizing:border-box;
     font-family: "Poppins" , sans-serif;
     scroll-behavior: smooth;
+    overflow-x: hidden;
     background-color:rgba(163, 131, 99. 0.5);
     }
     p{
@@ -202,8 +203,8 @@
         background-image: url("files/website-background-image.png");
         background-repeat: no-repeat;
         animation: 1s ease-out 0s 1 animatedBackground;
-        margin-top: -4.2%;
-        padding-top: 12%;
+        margin-top: -5%;
+        padding-top: 20%;
         background-size: cover;
         background-position: center;
     }
@@ -212,14 +213,12 @@
         width: 11vw;
         background-color: rgba(211, 211, 211, 0.8);
         backdrop-filter: blur(10px);
-        position: absolute;
         overflow-y: hidden;
-        opacity: 0.1;
         margin: 0!important;
         z-index: 10;
         animation: navbarLoad linear both;
         animation-timeline: view();
-        animation-range: entry 50% cover 50%;
+        animation-range: entry 30% cover 50%;
     }
     
     .logo{
@@ -296,7 +295,6 @@
         padding-right: 5%;
         padding-left: 5%;
         font-size: large;
-        justify-content: center;
         animation: fly-in linear both;
         animation-timeline: view();
         animation-range: entry 30% cover 40%;
@@ -309,14 +307,7 @@
         animation-delay: 5s;
         animation-range: entry-crossing 40% cover 50% ;
     }
-    .about-content h2{
-        padding-left: 5%;
-        padding-right: 5%;
-        animation: textLoad linear both;
-        animation-timeline: view();
-        animation-delay: 0s;
-        animation-range: entry 0% cover 40%;
-    }
+
     .projects{
         width: 80%;
         display: flex;
@@ -357,7 +348,9 @@
     }
     
     .project-1{
-        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         background-image: url("files/lenna-background-image.png");
         background-size: contain;
         cursor: pointer;
@@ -366,6 +359,7 @@
         list-style: none;
         text-transform: uppercase;
         color: white;
+        text-align: center;
     }
     .project-1:hover{
         background-image: url("files/lenna-background-image-toggle.png");
@@ -373,21 +367,23 @@
     }
     .project-1:hover li{
         list-style: none;
-        color: black;
+        color: rgb(54, 69, 79);
     }
     .project-1 a{
         text-decoration: none;
     }
     .project-2{
-        background: orange;
-        text-align: center;
-        background-size: contain;
+        display: flex;
+        background: rgb(60, 112, 52);
+        align-items:  center;
+        justify-content: center;
         cursor: pointer;
     }
     .project-2 li{
         list-style: none;
         text-transform: uppercase;
         color: black;
+        text-align: center;
     }
     .project-2 a{
         text-decoration: none;
@@ -396,21 +392,34 @@
         color:white;
     }
     .project-3{
-        background: yellow;
+        display: flex;
+        list-style: none;
+        background: rgb(60, 112, 52);
+        align-items:  center;
+        justify-content: center;
         cursor: pointer;
-    
     }
+    .project-3 a{
+        text-decoration: none;
+    }
+    .project-3 li{
+        text-transform: uppercase;
+        color: black;
+    }
+    .project-3 li:hover{
+        color:white;
+    }
+
     .project-4{
-        background: green;
+        background: rgb( 101, 88, 77 );
         cursor: pointer;
     }
     .project-5{
-        background: blue;
+        background: rgb( 101, 88, 77 );
         cursor: pointer;
-    
     }
     .project-6{
-        background: indigo;
+        background: rgb(60, 112, 52);
         cursor: pointer;
     
     }
@@ -510,6 +519,7 @@
             animation-name: headerRise;
             animation-duration: 4s;
             animation-iteration-count: 1;
+            z-index: 1;
         }
         .Liam div{
             animation-name:headerrumble;
@@ -521,38 +531,30 @@
             text-transform: uppercase;
             color: lightslategray
         }
-        .water{
-            display: flex;
-            justify-content: center;
-            position:relative;
-            width: 400%;
-            animation: 1s ease-out 0s 1 headerload;
-            filter: opacity(1);
-            background: none;
-            z-index:4;
-        }
+
         .foreground{
             display: flex;
             justify-content: center;
             position: relative;
             margin-top: -117%;
-            margin-bottom: -10%;
+            margin-bottom: -15%;
             width: 400%;
-            animation: 1.5s ease-out 0s 1 headerload; 
+            animation: 1.5s ease-out 0s 1 foregroundload; 
             filter: opacity(1);
             background: none;
             z-index: 3;
+            overflow-y: hidden;
         }
         .background{
             position: relative;
             margin-left: 6.8%;
             margin-top: -40%;
             width: 393.2%;
-            animation: 2.2s ease-out 0s 1 headerload;
+            animation: 2.5s ease-out 0s 1 headerload;
             filter: opacity(1);
             background: none; 
             z-index: 2;
-            
+            overflow-y: hidden;
         }
         .sky{
             position: relative;
@@ -564,6 +566,15 @@
         }
         .main-wrapper{
             width: 100%;
+            background-color: rgb(255, 255, 255);
+            background-image: url("files/website-background-image.png");
+            background-repeat: no-repeat;
+            animation: 1s ease-out 0s 1 animatedBackground;
+            margin-top: -15%;
+            padding-top: 20vh;
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
         }
         .navbar{
             height:100%;
@@ -584,61 +595,73 @@
         }
 
         .about{
-            width: 80%;
-            display:block;
+            width: 70%;
+            display:flex;
             margin-left: auto;
-            padding-left: 5%;
-    
+            padding-left: 1%;
+            flex-direction: column;
         }
         .about-title{
-            background-color: rgba(209, 75, 75, 0.562);
-            width: 80%;
-            height: 50vh;
-            margin-top: 5vh;
-            margin-bottom: 5vh;
+            display: flex;
+            width: 100%;
+            height: 25vh;
             margin-left: auto;
             margin-right: auto;
+            background-color: rgba(211, 211, 211, 0.5);
+            border-radius: 5%;
+            backdrop-filter: blur(10px);
             font-size: 25px;
             justify-content: center;
             align-items:center;
-            backdrop-filter: blur(10px);
         }
         .headshot{
+            display: flex;
+            justify-content: center;
+            align-items: center;
             border-radius: 50%;
-            height: 200px;
-            width: 200px;
-            margin-top: 20%;
+            height: 40vh;
+            width: 40vh;
+            margin-bottom: 20%;
             margin-right: auto;
             margin-left: auto;
             object-fit: cover;
-            align-items: center;
         }
         .about-content{
-            width: 90%;
+            width: 100%;
             height: auto;
             margin-top: 5vh;
             margin-bottom: 5vh;
-            font-size: medium;
+            font-size: small;
             text-align: center;
+            animation: fly-in linear both;
+            animation-timeline: view();
+            animation-range: entry 30% cover 40%;
+        }
+        .about-content p{
+
+            animation: textLoad linear both;
+            animation-timeline: view();
+            animation-delay: 5s;
+            animation-range: entry-crossing 40% cover 50% ;
         }
         .projects{
-            width: 80%;
-            display: block;
-            margin-left: auto;
+            width: 100%;
+            display: flex;
+            margin-left: 25%;
             margin-right: auto;
             align-items: center;
-            padding-left: 20vw;
+            justify-content: center;
+            flex-direction: column;
         }
         
         .projects-title{
-            background-color: rgba(153, 143, 188, 0.5);
+            background-color: rgba(211, 211, 211, 0.5);
             display: flex;
-            width: 80%;
-            height: 50vh;
+            width: 70%;
+            height: 25vh;
             margin-top: 5vh;
             margin-bottom: 5vh;
-            margin-left: auto;
-            margin-right: auto;
+            margin-right: 30%;
             font-size: 25px;
             justify-content: center;
             align-items:center;
@@ -646,15 +669,17 @@
             border-radius: 5%;
 
         }
-    
+  
         .project-grid{
             display: grid;
             height: auto;
+            width: 70%;
             margin-top: 5vh;
             margin-bottom: 5vh;
-            font-size: large;
-            grid-template-rows: repeat(3, 30vw);
-            grid-template-columns: repeat(2, 30vw);
+            margin-left: -80%;
+            font-size: medium;
+            grid-template-rows: repeat(3, 20vw);
+            grid-template-columns: repeat(2, 20vw);
             grid-gap: 1em 3em;
         
         }
