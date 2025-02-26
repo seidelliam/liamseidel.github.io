@@ -5,7 +5,6 @@
     font-family: "Poppins" , sans-serif;
     scroll-behavior: smooth;
     overflow-x: hidden;
-    background-color:rgba(163, 131, 99. 0.5);
     }
     p{
         font-family: "Poppins", sans-serif;
@@ -234,7 +233,7 @@
         font-size: larger;
         list-style: none;
         display: inline-block;
-        margin: 35% 15px;
+        margin: 50px 15px;
         
     }
     .navbar ul li a{
@@ -605,10 +604,10 @@
         }
         .navbar ul li{
             cursor: pointer;
-            font-size: small;
+            font-size: large;
             list-style: none;
             display: inline-block;
-            margin: 70% 5px;
+            margin: 50px 5px;
             
         }
 
@@ -691,10 +690,9 @@
         .project-grid{
             display: grid;
             height: auto;
-            width: 70%;
+            width: 100%;
             margin-top: 5vh;
             margin-bottom: 5vh;
-            margin-left: -80%;
             font-size: medium;
             grid-template-rows: repeat(3, 20vw);
             grid-template-columns: repeat(2, 20vw);
@@ -709,6 +707,9 @@
             justify-content: space-evenly;
             backdrop-filter: blur(20px);
             border-radius: 40px;
+        }
+        .grid-center{
+            margin-right: 170px;
         }
         .contact-container h1{
             width: 90%;
