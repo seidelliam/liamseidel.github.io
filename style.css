@@ -40,7 +40,7 @@
     }
     @keyframes foregroundload{
         0%{
-            transform: translateY(350%);
+            transform: translateY(1000%);
         }
 
         90%{
