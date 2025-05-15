@@ -1,43 +1,87 @@
-window.addEventListener("scroll", setScrollVar);
-window.addEventListener("resize", setScrollVar);
-
-document.addEventListener("DOMContentLoaded", () => {
-    setScrollVar();
-    splitScroll();
-    scrollWindow();
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
 });
 
-function setScrollVar() {
-    const htmlElement = document.documentElement;
-    const scrollPercent = Math.min((htmlElement.scrollTop / htmlElement.clientHeight) * 100, 100);
-    htmlElement.style.setProperty("--scroll", scrollPercent);
-    document.getElementById("header").style.zIndex = scrollPercent > 15 ? "-10" : "1";
-}
+// Navbar scroll effect
+const navbar = document.querySelector('.navbar');
+let lastScroll = 0;
 
-function splitScroll() {
-    new ScrollMagic.Controller()
-        .addScene(new ScrollMagic.Scene({
-            duration: '270.3%',
-            triggerElement: '.navbar',
-            triggerHook: 0
-        }).setPin('.navbar'));
-}
-
-function scrollWindow() {
-    window.scrollTo(0, 0);
-}
-
-function projectScroll(x) {
-    if (x.matches) {
-        new ScrollMagic.Controller()
-            .addScene(new ScrollMagic.Scene({
-                duration: '80%',
-                triggerElement: '.projects-title',
-                triggerHook: 0.05
-            }).setPin('.projects-title'));
+window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    
+    if (currentScroll <= 0) {
+        navbar.classList.remove('scroll-up');
+        return;
     }
+    
+    if (currentScroll > lastScroll && !navbar.classList.contains('scroll-down')) {
+        // Scroll Down
+        navbar.classList.remove('scroll-up');
+        navbar.classList.add('scroll-down');
+    } else if (currentScroll < lastScroll && navbar.classList.contains('scroll-down')) {
+        // Scroll Up
+        navbar.classList.remove('scroll-down');
+        navbar.classList.add('scroll-up');
+    }
+    lastScroll = currentScroll;
+});
+
+// Form submission handling
+const contactForm = document.querySelector('.contact-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+        const originalText = submitButton.textContent;
+        submitButton.textContent = 'Sending...';
+        submitButton.disabled = true;
+        
+        try {
+            const formData = new FormData(contactForm);
+            const response = await fetch(contactForm.action, {
+                method: 'POST',
+                body: formData
+            });
+            
+            if (response.ok) {
+                alert('Message sent successfully!');
+                contactForm.reset();
+            } else {
+                throw new Error('Failed to send message');
+            }
+        } catch (error) {
+            alert('Failed to send message. Please try again later.');
+        } finally {
+            submitButton.textContent = originalText;
+            submitButton.disabled = false;
+        }
+    });
 }
 
-const mediaQuery = window.matchMedia("(min-width: 768px)");
-projectScroll(mediaQuery);
-mediaQuery.addEventListener("change", () => projectScroll(mediaQuery));
+// Layered scroll animation with GSAP ScrollTrigger
+window.addEventListener('DOMContentLoaded', () => {
+    if (window.gsap && window.ScrollTrigger) {
+        gsap.utils.toArray('section').forEach((section, i) => {
+            ScrollTrigger.create({
+                trigger: section,
+                start: 'top top',
+                pin: true,
+                pinSpacing: false,
+                scrub: false,
+                // Only unpin on the last section
+                end: () => `+=${section.offsetHeight}`
+            });
+        });
+    }
+}); 
