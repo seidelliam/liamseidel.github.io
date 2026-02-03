@@ -72,16 +72,38 @@ if (contactForm) {
 // Layered scroll animation with GSAP ScrollTrigger
 window.addEventListener('DOMContentLoaded', () => {
     if (window.gsap && window.ScrollTrigger) {
+        const experienceSection = document.querySelector('#experience');
+        const experienceItems = document.querySelectorAll('.experience-item');
+        
+        // Ensure all experience items are visible
+        if (experienceItems.length >= 4) {
+            gsap.set(experienceItems[0], { opacity: 1, y: 0 });
+            gsap.set(experienceItems[1], { opacity: 1, y: 0 });
+            gsap.set(experienceItems[2], { opacity: 1, y: 0 });
+            gsap.set(experienceItems[3], { opacity: 1, y: 0 });
+        }
+        
         gsap.utils.toArray('section').forEach((section, i) => {
-            ScrollTrigger.create({
-                trigger: section,
-                start: 'top top',
-                pin: true,
-                pinSpacing: false,
-                scrub: false,
-                // Only unpin on the last section
-                end: () => `+=${section.offsetHeight}`
-            });
+            if (section.id === 'contact') {
+                // Lock contact section with footer included
+                ScrollTrigger.create({
+                    trigger: section,
+                    start: 'top top',
+                    pin: true,
+                    pinSpacing: false,
+                    scrub: false,
+                    end: () => `+=${section.offsetHeight}`
+                });
+            } else {
+                ScrollTrigger.create({
+                    trigger: section,
+                    start: 'top top',
+                    pin: true,
+                    pinSpacing: false,
+                    scrub: false,
+                    end: () => `+=${section.offsetHeight}`
+                });
+            }
         });
     }
 }); 
