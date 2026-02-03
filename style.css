@@ -19,11 +19,15 @@ html {
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Lora', serif;
     line-height: 1.6;
     color: var(--text-color);
     overflow-x: hidden;
     background: var(--background);
+}
+
+h1, h2, h3, .logo {
+    font-family: 'Montserrat', sans-serif;
 }
 
 .container {
@@ -91,7 +95,7 @@ body {
 }
 
 .hero-content h1 {
-    font-size: 4rem;
+    font-size: 5rem;
     margin-bottom: 1rem;
     color: #f8f6f0;
 }
@@ -99,6 +103,7 @@ body {
 .subtitle {
     font-size: 1.5rem;
     color: #fff7df;
+    opacity: 0.8;
 }
 
 /* About Section */
